@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Présentation - Université ESETEC</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+  --primary:#7c3aed;
+  --primary-dark:#5b21b6;
+  --primary-glow:rgba(124,58,237,0.4);
+  --accent:#a855f7;
+  --bg:#faf5ff;
+  --white:#fff;
+  --card:rgba(255,255,255,0.75);
+  --dark:#1e293b;
+  --text-light:#64748b;
+  --shadow:0 8px 25px rgba(124,58,237,0.15);
+  --radius:20px;
+  --transition:all 0.4s cubic-bezier(0.23,1,0.32,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  background-image: 
+    radial-gradient(circle at 10% 20%, var(--primary-glow) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(168,85,247,0.3) 0%, transparent 40%);
+  color:var(--dark);
+  line-height: 1.7;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+nav{
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(20px) saturate(180%);
+  box-shadow:var(--shadow);
+  position:sticky;top:0;z-index:100;
+  border-bottom:1px solid rgba(255,255,255,0.4);
+}
+.nav-wrap{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0}
+.logo{font-weight:800;color:var(--primary);font-size:1.5rem}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{
+  color:var(--text-light);
+  text-decoration:none;
+  font-weight:600;
+  transition:var(--transition);
+  position:relative;
+}
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  bottom:-5px;left:0;
+  width:0;height:3px;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  border-radius:3px;
+  transition:var(--transition);
+}
+.nav-links a:hover,.nav-links a.active{color:var(--primary)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+
+.page-title{
+  text-align:center;
+  padding:5rem 0 2rem;
+  font-size:clamp(2.2rem,5vw,3.2rem);
+  font-weight:800;
+  background:linear-gradient(135deg,var(--primary) 0%,var(--accent) 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:center;
+  margin-bottom:5rem;
+}
+.img-rounded{
+  width:100%;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  transition:var(--transition);
+}
+.img-rounded:hover{transform:scale(1.03)}
+.grid-2 h2{color:var(--primary);margin-bottom:1rem;font-size:1.8rem}
+.grid-2 p{color:var(--text-light);font-size:1.05rem}
+
+/* Nouvelle timeline moderne sans trait moche */
+.timeline-modern{
+  padding:5rem 0;
+}
+.timeline-modern h2{
+  text-align:center;
+  margin-bottom:4rem;
+  font-size:2.5rem;
+  font-weight:800;
+  color:var(--primary);
+}
+.timeline-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:2rem;
+}
+.timeline-card{
+  background:var(--card);
+  backdrop-filter:blur(25px) saturate(180%);
+  padding:2rem;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  position:relative;
+  transition:var(--transition);
+  border:1px solid rgba(255,255,255,0.7);
+  overflow:hidden;
+}
+.timeline-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:5px;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:var(--transition);
+}
+.timeline-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(124,58,237,0.2);
+}
+.timeline-card:hover::before{transform:scaleX(1)}
+.timeline-year{
+  font-size:2.5rem;
+  font-weight:800;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  margin-bottom:1rem;
+}
+.timeline-card h3{
+  color:var(--dark);
+  margin-bottom:0.8rem;
+  font-size:1.2rem;
+}
+.timeline-card p{
+  color:var(--text-light);
+  line-height:1.6;
+}
+
+.team{padding:5rem 0}
+.team h2{
+  text-align:center;
+  margin-bottom:3rem;
+  font-size:2.5rem;
+  font-weight:800;
+  color:var(--primary);
+}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.member{
+  background:var(--card);
+  backdrop-filter:blur(25px) saturate(180%);
+  border-radius:var(--radius);
+  overflow:hidden;
+  text-align:center;
+  box-shadow:var(--shadow);
+  transition:var(--transition);
+  border:1px solid rgba(255,255,255,0.7);
+}
+.member:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 20px 40px rgba(124,58,237,0.25);
+}
+.member img{
+  width:100%;height:280px;object-fit:cover;
+  transition:var(--transition);
+}
+.member:hover img{transform:scale(1.08)}
+.member h3{padding:1.5rem 0 0.5rem;color:var(--primary);font-size:1.3rem}
+.member p{padding-bottom:1.5rem;color:var(--text-light)}
+
+footer{
+  background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 100%);
+  color:var(--white);
+  padding:3rem 0;
+  text-align:center;
+  margin-top:5rem;
+}
+
+@media(max-width:768px){
+  .grid-2,.grid-3{grid-template-columns:1fr}
+  .timeline-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .page-title{padding:3rem 0 1rem}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-wrap">
+    <div class="logo">🎓 ESETEC</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="presentation.html" class="active">Présentation</a></li>
+      <li><a href="formations.html">Formations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<h1 class="page-title">Notre histoire, nos valeurs</h1>
+
+<div class="container grid-2">
+  <img src="d6.jpg" alt="Campus InnovU" class="img-rounded">
+  <div>
+    <h2>Mission</h2>
+    <p>Former des leaders responsables, créatifs et prêts pour les métiers de demain. On mise sur l’innovation pédagogique, l’alternance et l’accompagnement personnalisé de chaque étudiant.</p>
+    <h2 style="margin-top:2rem">Vision 2030</h2>
+    <p>Devenir le top 5 des universités privées d’Afrique de l’Ouest pour l’employabilité et la recherche appliquée, avec un campus 100% digital et durable.</p>
+  </div>
+</div>
+
+<section class="timeline-modern container">
+  <h2>Notre parcours</h2>
+  <div class="timeline-grid">
+    <div class="timeline-card">
+      <div class="timeline-year">2018</div>
+      <h3>Lancement d’ESETEC</h3>
+      <p>Création avec 120 étudiants pionniers et une vision : révolutionner l’éducation supérieure en Côte d’Ivoire.</p>
+    </div>
+    <div class="timeline-card">
+      <div class="timeline-year">2021</div>
+      <h3>Accréditation internationale</h3>
+      <p>Reconnaissance CAMES + ouverture de 3 laboratoires de recherche high-tech en IA et cybersécurité.</p>
+    </div>
+    <div class="timeline-card">
+      <div class="timeline-year">2024</div>
+      <h3>5000 étudiants</h3>
+      <p>25 partenariats entreprises, 92% d’employabilité à 6 mois. Ouverture du campus de Yamoussoukro.</p>
+    </div>
+    <div class="timeline-card">
+      <div class="timeline-year">2026</div>
+      <h3>Campus 100% digital</h3>
+      <p>Lancement de notre plateforme immersive VR pour apprendre depuis partout en Afrique.</p>
+    </div>
+  </div>
+</section>
+
+<section class="team container">
+  <h2>Rencontre l’équipe dirigeante</h2>
+  <div class="grid-3">
+    <div class="member">
+      <img src="d9.jpg" alt="Dr. Aïcha Kouassi">
+      <h3>Mr.Achi</h3>
+      <p>Informaticien de L'école</p>
+    </div>
+    <div class="member">
+      <img src="op56.jpg" alt="Pr. Marc Diop">
+      <h3>Pr. Gbaha Prosper</h3>
+      <p>DG ESETEC</p>
+    </div>
+    <div class="member">
+      <img src="d16.jpg" alt="Mme. Fatou N’Dri">
+      <h3>Mr. Yéo</h3>
+      <p>Inspecteur de filières</p>
+    </div>
+  </div>
+</section>
+<footer>© 2026 ESETEC - Yamoussoukro, Côte d’Ivoire. Tous droits réservés.</footer>
+</body>
+</html>

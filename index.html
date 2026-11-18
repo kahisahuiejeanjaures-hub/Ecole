@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accueil - Université ESETEC</title>
+<style>
+:root{
+  --primary:#2563eb; --dark:#1e293b; --accent:#f59e0b;
+  --bg:#f8fafc; --white:#fff; --shadow:0 10px 30px rgba(0,0,0,0.08);
+  --radius:16px; --transition:all 0.3s ease;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',system-ui,sans-serif;background:var(--bg);color:var(--dark);line-height:1.6}
+.container{max-width:1150px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);box-shadow:var(--shadow);z-index:99}
+.nav-wrap{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
+.logo{height:45px;font-weight:800;color:var(--primary);font-size:1.4rem}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-weight:500;transition:var(--transition);color:var(--dark)}
+.nav-links a:hover,.nav-links a.active{color:var(--primary)}
+.hero{background:linear-gradient(135deg,#2563eb 0%,#1e40af 100%);color:var(--white);padding:6rem 0;text-align:center;border-radius:0 0 var(--radius) var(--radius)}
+.hero h1{font-size:3.2rem;margin-bottom:1rem;animation:fadeUp 0.8s ease}
+.hero p{font-size:1.2rem;opacity:0.9;margin-bottom:2rem}
+.btn{background:var(--accent);color:var(--dark);padding:1rem 2rem;border-radius:50px;font-weight:700;border:none;cursor:pointer;transition:var(--transition)}
+.btn:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;padding:4rem 0}
+.stat-card{background:var(--white);padding:2rem;border-radius:var(--radius);text-align:center;box-shadow:var(--shadow);transition:var(--transition)}
+.stat-card:hover{transform:translateY(-8px)}
+.stat-card h3{font-size:2.5rem;color:var(--primary);margin-bottom:0.5rem}
+.features{padding:4rem 0}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.card{background:var(--white);padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow);transition:var(--transition)}
+.card:hover{transform:translateY(-5px)}
+.card img{width:100%;height:200px;object-fit:cover;border-radius:12px;margin-bottom:1rem}
+footer{background:var(--dark);color:var(--white);padding:3rem 0 1rem;margin-top:4rem}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.footer-bottom{text-align:center;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);margin-top:2rem}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.grid-3,.stats{grid-template-columns:1fr}.hero h1{font-size:2rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-wrap">
+    <div class="logo">🎓 ESETEC</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Accueil</a></li>
+      <li><a href="presentation.html">Présentation</a></li>
+      <li><a href="formations.html">Formations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>Façonne ton avenir avec ESETEC</h1>
+    <p>L’université qui connecte savoir, créativité et employabilité</p>
+    <a href="formations.html"><button class="btn">Commencer maintenant</button></a>
+  </div>
+</section>
+
+<section class="stats container">
+  <div class="stat-card"><h3>5000+</h3><p>Étudiants formés</p></div>
+  <div class="stat-card"><h3>95%</h3><p>Taux d’insertion</p></div>
+  <div class="stat-card"><h3>120</h3><p>Enseignants experts</p></div>
+  <div class="stat-card"><h3>25</h3><p>Partenaires entreprises</p></div>
+</section>
+
+<section class="features container">
+  <h2 style="text-align:center;margin-bottom:3rem;font-size:2.5rem">Pourquoi choisir ESETEC ?</h2>
+  <div class="grid-3">
+    <div class="card">
+      <img src="d7.jpg" alt="Campus">
+      <h3>Campus moderne</h3>
+      <p>Labs high-tech, bibliothèque 24h/24, espaces de coworking pour booster ta créativité.</p>
+    </div>
+    <div class="card">
+      <img src="j1.jpeg" alt="Profs">
+      <h3>Enseignants pros</h3>
+      <p>Des intervenants issus du monde pro + universitaire. Tu apprends ce que le marché veut.</p>
+    </div>
+    <div class="card">
+      <img src="d13.jpg" alt="Projet">
+      <h3>Projets réels</h3>
+      <p>Hackathons, startups studio, stages dès la 1ère année. Tu sors avec un portfolio.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div><h4>ESETEC</h4><p>Excellence • Innovation • Impact</p></div>
+    <div><h4>Liens</h4><p><a href="presentation.html" style="color:white">Présentation</a></p><p><a href="formations.html" style="color:white">Formations</a></p></div>
+    <div><h4>Contact</h4><p> Yamoussoukro - Côte d'Ivoire </p><p> +225 07 68 12 42 46</p></div>
+  </div>
+  <div class="footer-bottom">© 2026 ESETEC - Tous droits réservés</div>
+</footer>
+</body>
+</html>
